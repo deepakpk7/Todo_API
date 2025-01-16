@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
-// import e from "express"
-
+import Add from './Add'
 function List(){
     const [data,setData] = useState([])
     const [editing,setEditing] = useState(false)
@@ -51,7 +50,7 @@ function List(){
                     ))}
                 </tbody>
             </table>
-            {editing ? <EditForm curTask={editdata} updatefun={updateDtls}/>:null}
+            {editing ? <EditForm curTask={editdata} updatefun={updateDtls}/>:<Add/>}
         </div>
     )
 }
